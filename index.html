@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Shopping Cart</h1>
+    </header>
+    <main>
+        <section id="product-list">
+            <h2>Products</h2>
+        </section>
+
+        <section id="summary">
+            <h3>Summary</h3>
+            <ul id="cart-summary-items">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <div class="summary-row">
+                <span>Items:</span>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="subtotal-price">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <select id="shipping-options">
+                    <option value="5">Standard Delivery - $5.00</option>
+                    <option value="10">Express Delivery - $10.00</option>
+                </select>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="total-price">$0.00</span>
+            </div>
+            <button class="checkout">Checkout</button>
+            <p id="error-message" style="color: red; font-size: 14px; display: none;">Your cart is empty. Please add items before proceeding to checkout.</p>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

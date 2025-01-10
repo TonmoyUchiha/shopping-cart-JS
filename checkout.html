@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Checkout Summary</h1>
+    </header>
+    <main>
+        <section id="checkout-summary">
+            <h2>Order Summary</h2>
+            <ul id="checkout-items"></ul>
+            <div class="summary-row">
+                <span>Items:</span>
+                <span id="checkout-items-count">0</span>
+            </div>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="checkout-subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span id="checkout-shipping">$5.00</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="checkout-total">$0.00</span>
+            </div>
+            <button id="confirm-order">Confirm Order</button>
+        </section>
+    </main>
+    <script src="checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Shirt 1",
+        "description": "Cotton T-shirt",
+        "price": 44.00,
+        "image": "https://picsum.photos/seed/shirt1/200/200"
+    },
+    {
+        "id": 2,
+        "name": "Shirt 2",
+        "description": "Cotton T-shirt",
+        "price": 44.00,
+        "image": "https://picsum.photos/seed/shirt2/200/200"
+    },
+    {
+        "id": 3,
+        "name": "Shirt 3",
+        "description": "Cotton T-shirt",
+        "price": 44.00,
+        "image": "https://picsum.photos/seed/shirt3/200/200"
+    },
+    {
+        "id": 4,
+        "name": "Shirt 4",
+        "description": "Cotton T-shirt",
+        "price": 44.00,
+        "image": "https://picsum.photos/seed/shirt4/200/200"
+    },
+    {
+        "id": 5,
+        "name": "Shirt 5",
+        "description": "Cotton T-shirt",
+        "price": 44.00,
+        "image": "https://picsum.photos/seed/shirt5/200/200"
+    }
+]
