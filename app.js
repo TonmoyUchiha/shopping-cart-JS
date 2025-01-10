@@ -25,7 +25,7 @@ function displayProducts(products) {
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
 
-        const imageUrl = `https://via.placeholder.com/60?text=${encodeURIComponent(product.name)}`;
+        const imageUrl = `https://picsum.photos/seed/${product.name}/60/60`;
 
         productCard.innerHTML = `
             <img src="${imageUrl}" alt="${product.name}">
@@ -70,13 +70,31 @@ function updateCart() {
         subtotal += item.price * item.quantity;
 
         const cartItem = document.createElement('li');
-        cartItem.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+        cartItem.innerHTML = `
+            ${item.name} - $${item.price}
+            <div class="quantity-controls">
+                <button onclick="changeQuantity(${item.id}, -1)">-</button>
+                <input type="number" value="${item.quantity}" readonly>
+                <button onclick="changeQuantity(${item.id}, 1)">+</button>
+            </div>
+        `;
         cartSummaryItems.appendChild(cartItem);
     });
 
     cartCount.textContent = cart.length;
     subtotalPrice.textContent = `$${subtotal.toFixed(2)}`;
     totalPrice.textContent = `$${(subtotal + parseFloat(shippingOptions.value)).toFixed(2)}`;
+}
+
+function changeQuantity(productId, change) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+            cart = cart.filter(cartItem => cartItem.id !== productId);
+        }
+        updateCart();
+    }
 }
 
 // Prevent checkout if cart is empty
