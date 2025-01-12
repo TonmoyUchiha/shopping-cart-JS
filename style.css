@@ -8,7 +8,6 @@ body {
     color: #333;
 }
 
-/* Gradient Header */
 header {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
@@ -16,19 +15,17 @@ header {
     padding: 20px;
     font-size: 24px;
     font-weight: bold;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Main Layout */
 main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start; /* Ensure content aligns at the top */
     padding: 20px;
     gap: 20px;
-    flex-wrap: wrap; /* Ensure responsiveness */
+    flex-wrap: wrap;
 }
 
 /* Product List Section */
@@ -38,15 +35,14 @@ main {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    max-height: 70vh; /* Constrain height */
+    max-width: 600px;
 }
 
 .product-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0;
     border-bottom: 1px solid #ddd;
 }
 
@@ -87,102 +83,103 @@ main {
     background-color: #5a68d2;
 }
 
-/* Cart Summary Section */
-#summary {
+/* Checkout Section */
+#checkout-summary {
     flex: 1;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-height: 70vh; /* Constrain height */
-}
-
-#cart-summary-items {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
-
-#cart-summary-items li {
+    max-width: 400px;
+    margin-top: 20px; /* Add spacing between product list and checkout */
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin: 10px 0;
-    font-size: 16px;
 }
 
-.quantity-controls {
+/* Promo Code Section */
+.promo-code-section {
+    margin-top: 20px;
     display: flex;
-    gap: 5px;
+    gap: 10px;
+    width: 100%; /* Stretch to fill checkout section */
+    justify-content: flex-end;
 }
 
-.quantity-controls input {
-    width: 40px;
-    text-align: center;
+#promo-code-input {
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    flex: 1;
+    max-width: 200px;
 }
 
+#apply-promo-code {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#apply-promo-code:hover {
+    background-color: #0056b3;
+}
+
+#promo-message {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Adjust spacing for summary rows */
 .summary-row {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     margin: 10px 0;
 }
 
 .total {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-button.checkout {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
+button#confirm-order {
+    padding: 10px 20px;
     background-color: #28a745;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 20px;
-    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+button#confirm-order:hover {
+    background-color: #218838;
+}
+button.checkout {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width for cleaner alignment */
+    text-align: center;
 }
 
 button.checkout:hover {
-    background-color: #218838;
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-/* Responsive Design */
-
-/* Tablet View */
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
-    }
-
-    #product-list,
-    #summary {
-        width: 100%;
-    }
-}
-
-/* Mobile View */
-@media (max-width: 480px) {
-    header {
-        font-size: 20px;
-    }
-
-    .product-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .product-card img {
-        margin-bottom: 10px;
-    }
-
-    button {
-        font-size: 14px;
-    }
+button.checkout:active {
+    transform: scale(0.98); /* Slightly shrink on click */
 }
